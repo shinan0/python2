@@ -1,0 +1,88 @@
+keys=[1,2,3,4]
+values = ['张三','李四','王五','赵六']
+#创建字典
+stduents={}
+i=0
+for key in keys:
+    stduents[key]=values[i]
+# 创建一个字典student,key是学号，value是姓名
+#学生信息在student.csv文件，从文件中读取并保存到字典
+
+#打开student.csv文件
+
+file = open('C:\\Users\\Administrator\\Desktop\\students.csv')
+#读取文件中的内容
+lines=file.readlines()
+#抽取每行胡学号和姓名，保存到字典
+students={}
+for line in lines:
+    #print(type(line))
+    tmp_list=line.split(',')
+    xuehao=tmp_list[0]
+    xingming=tmp_list[1]
+    students[xuehao] = xingming
+    
+print(students)
+{'1': '张三\n', '2': '李四\n', '3': '王五\n'}
+#从学号中随机抽取N个学号
+import random
+
+
+num=int(input("输入你要的人数："))
+#如何把字典中的key(学号)取成列表
+xuehao_list=random.sample(students.keys(),num)
+        #根据随机抽取的学号，打印出对应的姓名
+xuehao_list
+输入你要的人数：2
+
+
+
+
+
+['1', '3']
+#根据随机抽取的学号，打印输出对应的姓名
+for xuehao in xuehao_list:
+    print(students[xuehao])
+keys=[1,2,3,4]
+values = ['frdgd','fdg','nbv','g']
+#创建字典
+stduents={}
+i=0
+for key in keys:
+    stduents[key]=values[i]
+    
+    # 创建一个字典student,key是学号，value是姓名
+#学生信息在student.csv文件，从文件中读取并保存到字典
+
+#打开student.csv文件
+
+file = open('C:\\Users\\Administrator\\Desktop\\students.csv')
+
+#读取文件中的内容
+lines=file.readlines()
+
+#抽取每行胡学号和姓名，保存到字典
+students={}
+for line in lines:
+    #print(type(line))
+    #print(lines.split(','))
+    tmp_list=line.split(',')
+    xuehao=tmp_list[0]
+    xingming=tmp_list[1]
+    students[xuehao] = xingming
+    
+print(students)
+
+#从学号中随机抽取N个学号
+import random
+
+
+num=int(input("输入你要的人数："))
+#如何把字典中的key(学号)取成列表
+xuehao_list=random.sample(students.keys(),num)
+        #根据随机抽取的学号，打印出对应的姓名
+xuehao_list
+
+#根据随机抽取的学号，打印输出对应的姓名
+for xuehao in xuehao_list:
+print(students[xuehao])
