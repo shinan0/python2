@@ -1,0 +1,28 @@
+#输出py:%%writefile walden.py
+#打开并读取文件、
+file=open(r'C:\Users\Administrator\Desktop\Walden.txt','r')
+lines=file.readlines()
+
+#要把每行拆成单词
+words = []
+for line in lines:
+    # 1 print(line.split(" "))
+    tmp_list=line.split(" ")
+    for word in tmp_list:
+        words.append(word)
+words
+
+#对words中每一个元素出现的个数
+#统计结果保存到字典中，字典的key是单词，value是单词初选的次数
+word_count = {}
+word_set = set(words)
+for word in word_set:
+    count_num = words.count(word)
+    word_count[word] = count_num
+word_count     
+#words.count('pages')
+
+#对word_count字典进行排序，按照出现的次数（value）进行降序排列
+#sorted(word_count.items())
+sorted(word_count.items(),key=lambda item: item[1],reverse=True)
+#word_count.items()
